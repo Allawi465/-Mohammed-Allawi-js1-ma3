@@ -1,25 +1,21 @@
 .results {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 20px;
 }
 
-.result {
+.box {
     margin: 1rem;
     padding: 1rem;
-    max-width: 200px;
-    background: white;
     border: 1px solid grey;
     border-radius: 1rem;
 }
 
-.loader {
+.loading {
     border: 10px solid #f3f3f3;
     border-top: 10px solid rgb(51, 139, 0);
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    margin-bottom: 20px;
     animation: spin 2s linear infinite;
 }
 
