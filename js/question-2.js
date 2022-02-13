@@ -5,32 +5,34 @@ const infoContainer = document.querySelector(".results");
 async function getInfo() {
 
    try {
-    const response = await fetch(url);
 
-    const data = await response.json();
+   const response = await fetch(url);
 
-    const facts = data.results;
+   const data = await response.json();
 
-    console.log(facts);
+   const info = data.results;
 
-    infoContainer.innerHTML = "";
+   infoContainer.innerHTML = "";
 
-    for (let i = 0; i < facts.length; i++) {
+   for (let i = 0; i < info.length; i++) {
 
-       if (i === 8) {
-           break;
-       }
+      const name = info[i].name; 
+      const rating = info[i].rating; 
+      const tags = info[i].tags; 
 
-       infoContainer.innerHTML += `<div class="box">
-                                        <h4>${facts[i].name}</h4>
-                                        <p>Rating: ${facts[i].rating}</p>
-                                        <p>Tags: ${facts.length}</p>
-                                      </div>`;
+      if (i === 8) {
+         break;
+      }
+
+      infoContainer.innerHTML += `<div class="box">
+                                     <h4>${name}</h4>
+                                     <p>Rating: ${rating}</p>
+                                     <p>Tags: ${tags.length}</p>
+                                  </div>`;
    }
 
 } catch (error){
-       console.log(error);
-       resultsContainer.innerHTML = "An error occurred when calling the API";
+       infoContainer.innerHTML = "An error occurred when calling the API";
    }
 };
 
