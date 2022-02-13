@@ -31,8 +31,8 @@ async function getInfo() {
                                   </div>`;
    }
 
-} catch (error){
-       infoContainer.innerHTML = "An error occurred when calling the API";
+} catch (error) {
+      infoContainer.innerHTML = "An error occurred when calling the API";
    }
 };
 
